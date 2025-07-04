@@ -1,0 +1,42 @@
+# Replace all <REPLACE_WITH_*> placeholders with desired values.
+
+# gcp_project_id: the ID of the GCP project where the stack will be deployed.
+gcp_project_id = "<REPLACE_WITH_GCP_PROJECT_ID>"
+
+# gcp_region: the GCP region where the stack will be deployed.
+gcp_region = "<REPLACE_WITH_GCP_REGION>"
+
+# cloud_run_service_name: the name of the Cloud Run service, as it will appear in GCP.
+cloud_run_service_name = "<REPLACE_WITH_CLOUD_RUN_SERVICE_NAME>"
+
+# cloud_run_service_sa_id: the ID of the Cloud Run service account, as it will appear in GCP.
+cloud_run_service_sa_id = "<REPLACE_WITH_CLOUD_RUN_SERVICE_SA_ID>"
+
+# cloud_run_service_env_vars: the environment variables to be set on the Cloud Run service.
+cloud_run_service_env_vars = {
+  # SKYFLOW_VAULT_URL: the Skyflow vault URL that detokenization API requests will be sent to.
+  SKYFLOW_VAULT_URL = "https://<REPLACE_WITH_SKYFLOW_VAULT_SUBDOMAIN>.skyvault.skyflowapis.dev"
+
+  # SKYFLOW_MAX_BATCH_SIZE: the maximum number of tokens to be detokenized in a single API request to Skyflow.
+  SKYFLOW_MAX_BATCH_SIZE = 1000
+
+  # LOGGING_LEVEL: the logging level to be used by the Cloud Run service.
+  LOGGING_LEVEL = "WARN"
+}
+
+# image_name: the name of the pre-built Docker image for detokenization that will be deployed to Cloud Run.
+image_name = "<REPLACE_WITH_IMAGE_NAME>"
+
+# image_tag: the tag of the pre-built Docker image for detokenization that will be deployed to Cloud Run.
+image_tag = "<REPLACE_WITH_IMAGE_TAG>"
+
+# bigquery_connection_id: the ID of the BigQuery connection to be created between BigQuery and the Cloud Run service, as it will appear in GCP.
+bigquery_connection_id = "<REPLACE_WITH_BIGQUERY_CONNECTION_ID>"
+
+# skyflow_sa_credentials_secret_id: the ID of the secret containing the Skyflow service account credentials, as it will appear in GCP.
+skyflow_sa_credentials_secret_id = "<REPLACE_WITH_ID_FOR_SKYFLOW_SA_CREDENTIALS_SECRET>"
+
+# skyflow_sa_credentials_secret_value: the Skyflow service account credentials to be stored in `skyflow_sa_credentials_secret_id`.
+skyflow_sa_credentials_secret_value = <<EOT
+<REPLACE_WITH_SKYFLOW_SA_CREDENTIALS>
+EOT
