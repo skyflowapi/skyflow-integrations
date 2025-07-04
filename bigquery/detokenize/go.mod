@@ -2,9 +2,6 @@ module github.com/skyflowapi/skyflow-integrations/bigquery/detokenize
 
 go 1.24.2
 
-// TODO: PP-942: remove this after migration to skyflow-integrations
-replace github.com/skyflowapi/skyflow-integrations/bigquery/common => ../common
-
 require (
 	github.com/gin-gonic/gin v1.10.1
 	github.com/onsi/ginkgo/v2 v2.23.4
@@ -12,7 +9,7 @@ require (
 	github.com/sethvargo/go-envconfig v1.3.0
 	github.com/sirupsen/logrus v1.9.3
 	github.com/skyflowapi/skyflow-go/commonutils v0.0.0-20250611120602-992855ae12b2
-	github.com/skyflowapi/skyflow-integrations/bigquery/common v0.0.0-00010101000000-000000000000
+	github.com/skyflowapi/skyflow-integrations/bigquery/common v0.0.1
 )
 
 require (
