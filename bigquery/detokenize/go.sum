@@ -87,6 +87,8 @@ github.com/skyflowapi/skyflow-go/serviceaccount v0.0.0-20250611120602-992855ae12
 github.com/skyflowapi/skyflow-go/serviceaccount v0.0.0-20250611120602-992855ae12b2/go.mod h1:AL67fN+eEm777DYDmX3j+aDYeA/wrp/m0+dGMW/IWBs=
 github.com/skyflowapi/skyflow-go/skyflow v0.0.0-20231031091049-3cf64b759f31 h1:lCxdz9eb4w64ZN12Z+wAunL5j7ymhhm3fFGEIv6m1rc=
 github.com/skyflowapi/skyflow-go/skyflow v0.0.0-20231031091049-3cf64b759f31/go.mod h1:k62C/yrwW+y1Yi265avPiEa1cHB9Yyh3VWqp/26g4xg=
+github.com/skyflowapi/skyflow-integrations/bigquery/common v0.0.1 h1:j4BkA1v8Nmd1EgkD7N/S5TECw9KCKbVdUlLOPbIVPKE=
+github.com/skyflowapi/skyflow-integrations/bigquery/common v0.0.1/go.mod h1:UhIoI1S4Llieb9W1tMAc29v9zeZbIwAw7+KN6CeQDd4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.4.0/go.mod h1:YvHI0jy2hoMjB+UWwv71VJQ9isScKT/TqJzVSSt89Yw=
 github.com/stretchr/objx v0.5.0/go.mod h1:Yh+to48EsGEfYuaHDzXPcE3xhTkx73EhmCGUpEOglKo=
