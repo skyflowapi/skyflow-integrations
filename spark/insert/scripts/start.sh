@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) 2025 Skyflow, Inc.
 set -e
 
 #Initialize functions and Constants

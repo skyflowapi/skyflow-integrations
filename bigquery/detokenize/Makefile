@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Skyflow, Inc.
+
 GCP_PROJECT_ID := ""
 IMAGE_NAME := detokenize
 IMAGE_TAG := $(shell date +%Y%m%d%H%M)

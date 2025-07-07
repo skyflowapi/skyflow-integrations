@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Skyflow, Inc.
+
 # Use the official Golang image as a build stage
 FROM golang:1.24-alpine3.20 AS build
 
