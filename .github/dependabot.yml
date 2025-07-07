@@ -1,0 +1,19 @@
+---
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/bigquery/detokenize"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "gomod"
+    directory: "/bigquery/detokenize"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "terraform"
+    directory: "/bigquery/detokenize/terraform"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "gomod"
+    directory: "/bigquery/common"
+    schedule:
+      interval: "weekly"
