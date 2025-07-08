@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) 2025 Skyflow, Inc.
 
 # Check if an environment variable is set,
 # takes the name of the environment variable as an argument

@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Skyflow, Inc.
+
 # -- PROVIDERS --
 terraform {
   required_providers {
