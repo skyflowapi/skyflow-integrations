@@ -1,0 +1,10 @@
+{
+  "type": "struct",
+  "fields": [
+    { "name": "name", "type": "string", "nullable": false },
+    { "name": "email", "type": "string", "nullable": false },
+    { "name": "dateOfBirth", "type": "string", "nullable": false },
+    { "name": "height", "type": "double", "nullable": false },
+    { "name": "adult", "type": "boolean", "nullable": false }
+  ]
+}

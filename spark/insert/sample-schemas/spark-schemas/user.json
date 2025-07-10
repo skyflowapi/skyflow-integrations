@@ -1,0 +1,33 @@
+{
+    "type": "struct",
+    "fields": [
+        {
+            "name": "records",
+            "type": {
+                "type": "array",
+                "elementType": {
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "nullable": true
+                        },
+                        {
+                            "name": "card_number",
+                            "type": "string",
+                            "nullable": true
+                        },
+                        {
+                            "name": "cvv",
+                            "type": "string",
+                            "nullable": true
+                        }
+                    ]
+                },
+                "containsNull": true
+            },
+            "nullable": true
+        }
+    ]
+}
