@@ -10,7 +10,7 @@ BIN_DIR="$(dirname "$BASH_SOURCE")"
 source ${BIN_DIR}/dataproc_template_functions.sh
 
 PROJECT_ROOT_DIR=${BIN_DIR}/..
-JAR_FILE=vault-insert-integration-0.0.1-SNAPSHOT.jar
+JAR_FILE=spark-insert-0.0.1-SNAPSHOT.jar
 if [ -z "${JOB_TYPE}" ]; then
   JOB_TYPE=SERVERLESS
 fi
@@ -49,8 +49,8 @@ if [ -z "$SKIP_BUILD" ]; then
   check_status $? "\n Commands to copy the project jar file to GCS Staging location went fine, thus we are good to go \n" "\n It seems like there is some issue in copying the project jar file to GCS Staging location \n"
 
   # Copy log4j.properties to GCS bucket
-  echo_formatted "Copying src/main/resources/log4j.properties to gs://${GCP_PROJECT}-dataproc-scripts/config/"
-  gsutil cp src/main/resources/log4j.properties gs://gcp-playground1-uw1-dataproc-scripts/config/
+  echo_formatted "Copying src/main/resources/log4j.properties to ${GCS_STAGING_LOCATION}/config/"
+  gsutil cp src/main/resources/log4j.properties ${GCS_STAGING_LOCATION}/config/
   check_status $? "\n log4j.properties copied to GCS, thus we are good to go \n" "\n Failed to copy log4j.properties to GCS \n"
 fi
 
@@ -73,7 +73,7 @@ if [[ $JOB_TYPE == "CLUSTER" ]]; then
     fi
   fi
 fi
-OPT_LABELS="--labels=job_type=kafka_to_vault"
+OPT_LABELS="--labels=job_type=kafka_to_skyflow_vault"
 OPT_DEPS_BUCKET="--deps-bucket=${GCS_STAGING_LOCATION}"
 OPT_CLASS="--class=Main"
 
@@ -101,7 +101,7 @@ if [ -n "${SERVICE_ACCOUNT_NAME}" ]; then
 fi
 
 # external log4j config
-OPT_FILES="--files=gs://gcp-playground1-uw1-dataproc-scripts/config/log4j.properties"
+OPT_FILES="--files=${GCS_STAGING_LOCATION}/config/log4j.properties"
 OPT_LOG4J_PROPS="--properties=spark.executor.extraJavaOptions=-Dlog4j.configuration=file:log4j.properties,spark.driver.extraJavaOptions=-Dlog4j.configuration=file:log4j.properties"
 
 # Running on an existing dataproc cluster or run on serverless spark

@@ -1,0 +1,101 @@
+{
+    "name": "sample-vault",
+    "description": "This is a sample vault for testing insertion through Spark",
+    "useMasterKey" : null,
+    "workspaceID": "{{workspace_id}}",
+    "owners" : null,
+    "schema": {
+        "vaultType": "STRUCTURED",
+        "queryService": {
+            "enabled": false
+        },
+        "tables": [
+        {
+            "name": "table1",
+            "unique": []
+        }
+        ],
+        "tokenGroup": [
+        {
+            "name": "deterministic_uuid",
+            "type": "DETERMINISTIC",
+            "rightToForget": true
+        },
+        {
+            "name": "nondeterministic",
+            "type": "NONDETERMINISTIC"
+        }
+        ],
+        "columns": [
+        {
+            "name": "name",
+            "tableName": "table1",
+            "isIndexed": false,
+            "dataType": "STRING",
+            "tokenGroups": [
+            "deterministic_uuid"
+            ],
+            "operations": [
+            "EXACT_MATCH"
+            ],
+            "notNull": true
+        },
+        {
+            "name": "email",
+            "tableName": "table1",
+            "isIndexed": false,
+            "dataType": "STRING",
+            "tokenGroups": [
+            "deterministic_uuid"
+            ],
+            "operations": [
+            "EXACT_MATCH"
+            ],
+            "notNull": true,
+            "inputValidation": [
+            "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+            ]
+        },
+        {
+            "name": "dateOfBirth",
+            "tableName": "table1",
+            "isIndexed": false,
+            "dataType": "STRING",
+            "tokenGroups": [
+            "nondeterministic"
+            ],
+            "operations": [
+            "EXACT_MATCH"
+            ],
+            "notNull": true
+        },
+        {
+            "name": "height",
+            "tableName": "table1",
+            "isIndexed": false,
+            "dataType": "NUMBER",
+            "tokenGroups": [
+            "nondeterministic"
+            ],
+            "operations": [
+            "EXACT_MATCH"
+            ],
+            "notNull": true
+        },
+        {
+            "name": "adult",
+            "tableName": "table1",
+            "isIndexed": false,
+            "dataType": "BOOL",
+            "tokenGroups": [
+            "nondeterministic"
+            ],
+            "operations": [
+            "EXACT_MATCH"
+            ],
+            "notNull": true
+        }
+        ],
+        "redactions": []
+    }
+}
