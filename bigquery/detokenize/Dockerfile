@@ -22,7 +22,7 @@ COPY . .
 RUN go build -o main ./cmd/main.go
 
 # Use a minimal base image to package the built binary
-FROM alpine:3.20
+FROM alpine:3.22
 
 # Set the working directory inside the container
 WORKDIR /root/
